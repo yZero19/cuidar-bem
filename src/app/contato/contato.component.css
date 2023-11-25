@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
+.container3 {
+    background-image: url('https://media.istockphoto.com/id/1199894243/pt/foto/doctors-office-with-medical-equipment.jpg?s=612x612&w=0&k=20&c=WFZik_CHq8PWuU3dim_i2USOs5fiUi-6X7Akijsw7d4=');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    width: 100%;
+}
+
+.box {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    text-align: center;
+    padding: 45px;
+    border-radius: 10px;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h3 {
+    color: rgb(52, 116, 255);
+    font-style: italic;
+}
+
+p {
+    font-size: large;
+    font-style: normal;
+    line-height: 1.8;
+    color: rgb(77, 76, 76);
+}
+
+.fa-brands {
+    margin-right: 5px;
+}
+
+a {
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+    align-items: center;
+}
+
+.whatsapp:hover {
+
+    color: chartreuse;
+}
+
+.instagram:hover {
+    color: #bc2a8d;
+
+}
+
+.rodapé{
+    padding: 150px;
+}
