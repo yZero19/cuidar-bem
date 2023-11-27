@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UsuarioService {
 
   private baseUrl: string = environment.baseUrl;
   private token: string | null;
@@ -49,15 +49,15 @@ export class UserService {
   }
 
   signUp(userDto: UserRequestDto): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/users`, userDto)
+    return this.http.post<any>(`${this.baseUrl}/usuarios`, userDto)
   }
 
   findById() {
-    return this.http.get<any>(`${this.baseUrl}/users/${this.id}`, { headers: this.headers })
+    return this.http.get<any>(`${this.baseUrl}/usuarios/${this.id}`, { headers: this.headers })
   }
 
   update(user: any) {
-    return this.http.put<any>(`${this.baseUrl}/users/${this.id}`, user, { headers: this.headers })
+    return this.http.put<any>(`${this.baseUrl}/usuarios/${this.id}`, user, { headers: this.headers })
   }
 
 

@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class SchedulingService {
+export class AgendamentoService {
 
   private baseUrl: string = environment.baseUrl;
   private token: string | null;

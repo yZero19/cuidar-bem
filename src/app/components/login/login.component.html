@@ -1,21 +1,21 @@
 <div class="container">
     <div class="box">
         <h2>Realize Seu Login</h2>
-        <form action="processar_login.php" method="post">
+        <form [formGroup]="form" >
             <table>
                 <tr>
-                    <td><label for="login">CPF:</label></td>
-                    <td><input type="text" id="login" name="login" required></td>
+                    <td><label for="cpf">CPF:</label></td>
+                    <td><input formControlName="cpf" type="text" id="cpf" mask="000.000.000-00" name="cpf"></td>
                 </tr>
                 <tr>
                     <td><label for="senha">Senha:</label></td>
-                    <td><input type="password" id="senha" name="senha" required></td>
+                    <td><input formControlName="senha" type="password" id="senha" name="senha"></td>
                 </tr>
             </table>
 
-            <input type="submit" value="Login">
+            <input type="submit" (click)="salvar()" value="Login">
         </form>
 
-        <p>Não tem uma conta? <a href="registro.html">Registre-se</a></p>
+        <p>Não tem uma conta? <a href="/registro">Registre-se</a></p>
     </div>
 </div>

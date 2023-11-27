@@ -1,5 +1,5 @@
 export class LoginDto{
-    public email: string
-    public password: string
+    public cpf: string
+    public senha: string
 }
 
