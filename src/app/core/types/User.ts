@@ -9,3 +9,10 @@ export class UserRequestDto{
     public email: string
     public senha: string
 }
+
+export class UsuarioAtualizarDto{
+    public nome: string
+    public sobrenome: string
+    public telefone: string
+    public senha: string
+}

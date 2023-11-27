@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { AgendamentoAtualizarDto, AgendamentoRequestDto } from '../types/Agendamento';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,6 @@ export class AgendamentoService {
   private id: string | null;
   private headers: HttpHeaders
 
-
   constructor(
     private http: HttpClient
   ) {
@@ -22,26 +22,20 @@ export class AgendamentoService {
     this.headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
   }
 
-
-  findByUserId(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/appointments/user/${this.id}`, { headers: this.headers })
+  listarConsultas(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/agendamentos/${this.id}`, { headers: this.headers })
   }
 
-  findByDoctorSpeciality(speciality: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/doctors/specialties/${speciality}`, { headers: this.headers })
+  agendarConsulta(request: AgendamentoRequestDto): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/agendamentos/${this.id}`, request, { headers: this.headers })
   }
 
-  findSchedulingById(id: number|null): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/appointments/${id}`, { headers: this.headers })
-  }
-
-
-  register(request: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/appointments`, request, { headers: this.headers })
+  atualizarConsulta(request: AgendamentoAtualizarDto): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/agendamentos`, request, { headers: this.headers })
   }
 
   delete(userId: number): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/appointments/${userId}`, { headers: this.headers })
+    return this.http.delete<any>(`${this.baseUrl}/agendamentos/${userId}`, { headers: this.headers })
   }
 
 }

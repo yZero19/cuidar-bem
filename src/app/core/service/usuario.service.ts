@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs'
 import { environment } from 'src/environments/environment';
-import { UserRequestDto } from '../types/User';
+import { UserRequestDto, UsuarioAtualizarDto } from '../types/User';
 import { LoginDto } from '../types/Login';
 import { BehaviorSubject } from 'rxjs';
 
@@ -52,14 +52,13 @@ export class UsuarioService {
     return this.http.post<any>(`${this.baseUrl}/usuarios`, userDto)
   }
 
-  findById() {
+  buscarPorId() {
     return this.http.get<any>(`${this.baseUrl}/usuarios/${this.id}`, { headers: this.headers })
   }
 
-  update(user: any) {
+  atualizar(user: UsuarioAtualizarDto) {
     return this.http.put<any>(`${this.baseUrl}/usuarios/${this.id}`, user, { headers: this.headers })
   }
-
 
   userIsLoggedIn() {
     return !!localStorage.getItem('token');
