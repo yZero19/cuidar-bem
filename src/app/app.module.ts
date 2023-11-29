@@ -18,6 +18,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
+import { UserComponent } from './user/user.component';
 
 export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
 
@@ -31,7 +32,8 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     RegistroComponent,
     SobreComponent,
     CabecalhoComponent,
-    RodapeComponent
+    RodapeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
