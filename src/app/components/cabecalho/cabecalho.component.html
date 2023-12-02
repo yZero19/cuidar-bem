@@ -21,14 +21,14 @@
                 <li class="nav-item">
                     <a class="nav-link text-color" routerLink="/agendamento">Agendamento</a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="isLoggedIn" class="nav-item">
                     <a routerLink="/registro">
                         <button type="button" class="btn btn-outline-success">Registro</button>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="isLoggedIn" class="nav-item">
                     <a routerLink="/login">
-                        <button type="button" class="btn btn-outline-success" routerLink="/login">Login</button>
+                        <button  type="button" class="btn btn-outline-success" routerLink="/login">Login</button>
                     </a>
                 </li>
             </ul>
