@@ -14,9 +14,7 @@
 
             <div class="card">
                 <h3>Consultas Agendadas</h3>
-                <p><i class="far fa-clock"></i> Consulta 1</p>
-                <p><i class="far fa-clock"></i> Consulta 2</p>
-                <p><i class="far fa-clock"></i> Consulta 3</p>
+                <p *ngFor="let consulta of consultas"><i class="far fa-clock"></i> {{consulta.data| date: 'dd/MM/yyyy'}}<br> {{consulta.horario}} <br> {{consulta.servico}} <br> {{consulta.medico}}</p>
             </div>
 
         </div>
